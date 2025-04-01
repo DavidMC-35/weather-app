@@ -2,8 +2,9 @@
   <div>
     <div class="sideBar">
       <h1>Weather App</h1>
+      <h3>{{ weatherStore.message }}</h3>
       <p>Comprueba que tiempo hace en tu ciudad</p>
-    <SearchBar />
+    <SearchBar @fetchWeather="handleFetchWeather" />
 
     </div>
     <div class="weather-info"></div>
@@ -11,8 +12,18 @@
 </template>
 
 <script setup>
-  import { ref } from 'vue';
+
+  import { useWeatherStore } from './store/weatherStore';
   import SearchBar from './components/SearchBar.vue';
+
+  const weatherStore = useWeatherStore();
+
+  const handleFetchWeather = (city) => {
+    weatherStore.fetchWeather(city);
+  };
+
+
+
 </script>
 
 <style scoped>
