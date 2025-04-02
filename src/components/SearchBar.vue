@@ -47,7 +47,12 @@ const fetchWeather = () => {
         border: none;
         color: white;
         background-color: transparent;
-        border-bottom: 2px solid #a8a8a8;
+        border-bottom: 2px solid #ffffff;
+    }
+    input[type="text"]::placeholder {
+        color: white;
+        opacity: 0.5;
+        transition: all 0.3s ease-in-out; 
     }
 
     button {

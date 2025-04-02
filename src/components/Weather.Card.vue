@@ -1,10 +1,7 @@
 <template>
     <div>
-        <h2>Información del clima</h2>
         <div class="weather-info" v-if="weatherStore.getWeatherInfo.length !== 0">
             <ul>
-                <li><strong>Ciudad:</strong> {{ weatherStore.getCity }}</li>
-                <li><strong>Temperatura:</strong> {{ weatherStore.getTemperature }}°C</li>
                 <li><strong>Temperatura mínima:</strong> {{ weatherStore.getMinTemperature }}°C</li>
                 <li><strong>Temperatura máxima:</strong> {{ weatherStore.getMaxTemperature }}°C</li>
                 <li><strong>Humedad:</strong> {{ weatherStore.getHumidity }}%</li>

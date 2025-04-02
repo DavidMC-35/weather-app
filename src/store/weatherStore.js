@@ -17,7 +17,8 @@ export const useWeatherStore = defineStore('weather', {
         getHumidity: (state) => state.weatherInfo.main.humidity,
         getWind: (state) => state.weatherInfo.wind.speed,
         getDescription: (state) => state.weatherInfo.weather[0].description,
-        getMessage: (state) => state.message, 
+        getMessage: (state) => state.message,
+        getIcon: (state) => state.weatherInfo.weather[0].icon, 
     },
     actions:{
         async fetchWeather(city) {
