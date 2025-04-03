@@ -24,8 +24,8 @@
 <style scoped>
     .weather-info{
         margin-top: 20px;
-        padding: 10px;
-        background-color: #f0f0f0;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.8);
         border-radius: 5px;
     }
     

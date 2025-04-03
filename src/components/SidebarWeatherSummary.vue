@@ -9,17 +9,13 @@
             <h3>Temperatura</h3>
             <p>{{ weatherStore.getTemperature }}°C</p>
         </div>
-        <!-- <div class="weather-summary-item">
-            <h3>Temperatura</h3>
-            <p>{{ weatherStore.getTemperature }}°C</p>
-        </div> -->
     </div>
 </template>
 
 <script setup>
 
-import { useWeatherStore } from '../store/weatherStore.js';
-const weatherStore = useWeatherStore();
+    import { useWeatherStore } from '../store/weatherStore.js';
+    const weatherStore = useWeatherStore();
 
 </script>
 

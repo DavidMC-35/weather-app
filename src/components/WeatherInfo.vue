@@ -6,31 +6,23 @@
         
         <div class="weather-details-container">
             <WeatherCard />
-            
-            <!-- Aquí puedes añadir componentes adicionales -->
-            
-            <!-- <div class="weather-forecast" v-if="weatherStore.getWeatherInfo.length !== 0">
-                Componente de pronóstico
-            </div>
-            
-            <div class="weather-charts" v-if="weatherStore.getWeatherInfo.length !== 0">
-                Componente de gráficos
-            </div> -->
+            <WeatherForecast />
         </div>
     </div>
 </template>
 
 <script setup>
-
     import WeatherCard from './Weather.Card.vue';
+    import WeatherForecast from './WeatherForecast.vue';
     import { useWeatherStore } from '../store/weatherStore.js';
     const weatherStore = useWeatherStore();
-
 </script>
+
 <style scoped>
     .weather-content {
         padding: 20px;
-        height: 100vh;
+        height: 100%;
+        box-sizing: border-box;
     }
     
     .weather-header {
@@ -40,9 +32,9 @@
     }
     
     .weather-details-container {
-        display: grid;
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
         gap: 20px;
+        width: 100%;
     }
-    
 </style>

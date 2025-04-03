@@ -3,14 +3,12 @@
     <div class="sidebar">
       <h1>Weather App</h1>
       <SearchBar @fetchWeather="handleFetchWeather" />
-      
       <SidebarWeatherSummary v-if="weatherStore.getWeatherInfo.length !== 0" />      
       <p v-else>{{ weatherStore.message }}</p>
-      
-      <!-- <RecentCities @select-city="handleFetchWeather" /> -->
     </div>
     <div class="main-content">
       <WeatherInfo />
+
     </div>
   </div>
 </template>
@@ -23,9 +21,11 @@
 
   const weatherStore = useWeatherStore();
 
-  const handleFetchWeather = (city) => {
+  const handleFetchWeather =  (city) => {
     weatherStore.fetchWeather(city);
+    weatherStore.fetchWeatherForecast(city); 
   };
+
 </script>
 
 <style scoped>
@@ -37,6 +37,7 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
   }
 
   .sidebar {
@@ -45,11 +46,12 @@
     position: fixed;
     top: 0;
     left: 0;
-    padding:20px;
+    padding: 20px;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
     z-index: 10;
     backdrop-filter: blur(10px);
     background-color: rgba(255, 255, 255, 0.4);
+    overflow-y: auto;
   }
 
   .main-content {
@@ -57,6 +59,6 @@
     margin-left: 350px;
     padding: 20px;
     min-height: 100vh;
-
+    box-sizing: border-box;
   }
 </style>
